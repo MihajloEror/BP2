@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="JPAStudent" transaction-type="RESOURCE_LOCAL">
+		<class>model.Student</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@nastava.is.pmf.uns.ac.rs:1521:xe"/>
+			<property name="javax.persistence.jdbc.user" value="baze2"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="javax.persistence.jdbc.password" value="baze2"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" /> <!-- value="update" - onda neće brisati sve podatke, nego samo dodati nove ili izmeniti, value="create-drop" -->
+         <property name="hibernate.show_sql" value="false" /> <!-- da ne ispisuje sql upite koje hibernate pravi -->
+         <property name="hibernate.format_sql" value="true" />
+         <property name="hibernate.transaction.flush_before_completion" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
